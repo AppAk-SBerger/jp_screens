@@ -217,27 +217,32 @@ class Order extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: screenHeight * 0.28,
-              left: screenWidth * 0.15,
+              top: screenHeight * 0.29,
+              left: screenWidth * 0.12,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 4,
                     children: [
                       Text(
                           style: TextStyle(
                             fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: -0.5,
                             color: Color(0xFFFFFFFF),
                           ),
                           "Angi's Yummy Burger"),
                       Text(
                           style: TextStyle(
+                            letterSpacing: -0.5,
                             color: Color(0xFFFFFFFF),
                           ),
                           "Delish vegan burger\nthat tastes like heaven"),
                       Row(
+                        spacing: 4,
                         children: [
                           SvgPicture.asset(
                               height: 13,
@@ -249,6 +254,8 @@ class Order extends StatelessWidget {
                               'assets/icons/A.svg'),
                           Text(
                               style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
                                 color: Color(0xFFFFFFFF),
                               ),
                               '13.99')
@@ -269,6 +276,8 @@ class Order extends StatelessWidget {
                 decoration: BoxDecoration(
                   backgroundBlendMode: BlendMode.srcOver,
                   gradient: RadialGradient(
+                    center: Alignment.bottomRight,
+                    radius: 2,
                     colors: [
                       const Color(0xFF908CF5),
                       const Color(0xFFBB8DE1),
