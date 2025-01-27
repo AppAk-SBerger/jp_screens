@@ -1,0 +1,269 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+// import 'package:vector_math/vector_math.dart';
+
+class Order extends StatelessWidget {
+  const Order({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            // background
+            SizedBox(
+              height: double.infinity,
+              child: Image(
+                image: AssetImage('assets/backgrounds/bg_mainscreen.png'),
+                fit: BoxFit.fitHeight,
+              ),
+            ),
+            DefaultTabController(
+              length: 4,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: AppBar(
+                  automaticallyImplyLeading: false,
+                  forceMaterialTransparency: true,
+                  leadingWidth: double.infinity,
+                  // toolbarHeight: (screenHeight / 6),
+                  leading: Text(
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Color(0xFFFFFFFF),
+                        fontSize: 24,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: -1,
+                        height: 1.0,
+                      ),
+                      'Choose Your Favorite\nSnack'),
+                ),
+              ),
+            ),
+            Positioned(
+              top: (screenHeight / 6),
+              // left: -50,
+              child: SizedBox(
+                width: screenWidth /* + 50 */,
+                child: TabBar(
+                  isScrollable: true,
+                  dividerColor: Color(0x00000000),
+                  dividerHeight: 0,
+                  indicatorColor: Color(0x00000000),
+                  labelPadding: EdgeInsets.only(right: 8, left: 0),
+                  tabs: [
+                    Tab(
+                      child: OutlinedButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(right: 4),
+                              child: SvgPicture.asset(
+                                  height: 13,
+                                  width: 13,
+                                  colorFilter: ColorFilter.mode(
+                                    Color(0xFF9E9E9E),
+                                    BlendMode.srcIn,
+                                  ),
+                                  'assets/icons/Lunch.svg'),
+                            ),
+                            Text(
+                              style: TextStyle(color: Color(0xFF9E9E9E)),
+                              'All Categories',
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(4),
+                              child: Icon(
+                                size: 13,
+                                color: Color(0xFF9E9E9E),
+                                Icons.keyboard_arrow_down,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: OutlinedButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Text(
+                              style: TextStyle(color: Color(0xFF9E9E9E)),
+                              'Salty',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: OutlinedButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Text(
+                              style: TextStyle(color: Color(0xFF9E9E9E)),
+                              'Sweet',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: OutlinedButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Text(
+                              style: TextStyle(color: Color(0xFF9E9E9E)),
+                              'Drinks',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // Positioned(
+            //   top: 300,
+            //   child: Transform(
+            //     alignment: Alignment.topCenter,
+            //     transform: Matrix4.identity()
+            //       ..setEntry(3, 2, 0.005)
+            //       ..rotateY(-.4),
+            //     child: Container(
+            //       height: 100,
+            //       width: 200,
+            //       color: Color(0xFFFFFFFF),
+            //     ),
+            //   ),
+            // ),
+            // Positioned(
+            //   top: 450,
+            //   child: Transform(
+            //     transform: Matrix4(
+            //       1, // 0 0
+            //       0, // 0 1
+            //       0, // 0 2
+            //       0, // 0 3
+            //       0, // 1 0
+            //       1, // 1 1
+            //       0, // 1 2
+            //       0, // 1 3
+            //       0, // 2 0
+            //       0, // 2 1
+            //       1, // 2 2
+            //       0, // 2 3
+            //       0, // 3 0
+            //       0, // 3 1
+            //       0, // 3 2
+            //       1, // 3 3
+            //     )
+            //       ..setEntry(3, 2, 0.01)
+            //       ..rotateY(-.4),
+            //     child: Container(
+            //       height: 100,
+            //       width: 100,
+            //       color: Color(0xFFFFFFFF),
+            //     ),
+            //   ),
+            // ),
+            // Positioned(
+            //   top: screenHeight * 0.27,
+            //   child: Card(
+            //     shape: RoundedRectangleBorder(
+            //       side: BorderSide(
+            //         color: Color(0x33FFFFFF),
+            //         width: 1.5,
+            //         style: BorderStyle.solid,
+            //         strokeAlign: BorderSide.strokeAlignInside,
+            //       ),
+            //       borderRadius: BorderRadius.all(Radius.circular(32)),
+            //     ),
+            //     clipBehavior: Clip.hardEdge,
+            //     color: Color(0x33FFFFFF),
+            //     child: BackdropFilter(
+            //       filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+            //       child: Padding(
+            //         padding: EdgeInsets.all(16),
+            //         child: Opacity(
+            //           opacity: 0.2,
+            //           child: Image(
+            //             image: AssetImage('assets/details/cut_card.png'),
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            Positioned(
+              top: screenHeight * 0.27,
+              child: Opacity(
+                opacity: 0.5,
+                child: Image(
+                  image: AssetImage('assets/details/cut_card.png'),
+                ),
+              ),
+            ),
+            Positioned(
+              child: Container(
+                width: 96,
+                height: 44,
+                decoration: BoxDecoration(
+                  backgroundBlendMode: BlendMode.srcOver,
+                  gradient: RadialGradient(
+                    colors: [
+                      const Color(0xFF908CF5),
+                      const Color(0xFFBB8DE1),
+                    ],
+                    stops: [0.0, 1.0],
+                  ),
+                  boxShadow: [
+                    //drop shadow
+                    BoxShadow(
+                        color: const Color(0xFF9375B6),
+                        offset: Offset(0, -3),
+                        blurRadius: 24,
+                        spreadRadius: 0,
+                        blurStyle: BlurStyle.solid),
+                    // inner shadow
+                    BoxShadow(
+                      color: const Color(0xFFFFACE4),
+                      offset: Offset(0, 0),
+                      blurRadius: 15,
+                      spreadRadius: 0,
+                      blurStyle: BlurStyle.solid,
+                    ),
+                    // inner shadow
+                    BoxShadow(
+                      color: const Color(0x80EA71C5),
+                      offset: Offset(0, 30),
+                      blurRadius: 90,
+                      spreadRadius: 0,
+                      blurStyle: BlurStyle.inner,
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Center(
+                    child: Text(
+                        style: TextStyle(fontSize: 13, color: Color(0xFFFFFFFF)), 'Add to otder')),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
