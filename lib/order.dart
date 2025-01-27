@@ -1,8 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 // import 'package:vector_math/vector_math.dart';
+
+import 'package:jp_screens/recommended_card.dart';
 
 class Order extends StatelessWidget {
   const Order({super.key});
@@ -326,6 +326,69 @@ class Order extends StatelessWidget {
                 image: AssetImage('assets/images/burger.png'),
               ),
             ),
+            Positioned(
+              bottom: 0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: -1,
+                          height: 1.0,
+                        ),
+                        'We Recommend'),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.4,
+                    width: screenWidth,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        spacing: 8,
+                        children: [
+                          RecommendedCard(
+                              imageAssetPath: "assets/images/cupcake_cat.png",
+                              productName: "Mogli's Cup",
+                              productDescription: "Strawberry ice cream",
+                              productPrice: 8.99,
+                              productLikes: 200),
+                          RecommendedCard(
+                              imageAssetPath: "assets/images/icecream.png",
+                              productName: "Balu's Cup",
+                              productDescription: "Pistachio ice cream",
+                              productPrice: 8.99,
+                              productLikes: 175),
+                          RecommendedCard(
+                              imageAssetPath: "assets/images/cupcake_chick.png",
+                              productName: "Louie's Cup",
+                              productDescription: "Vanilla ice cream",
+                              productPrice: 8.99,
+                              productLikes: 150),
+                          RecommendedCard(
+                              imageAssetPath: "assets/images/icecream_cone.png",
+                              productName: "Bagheera's Cone",
+                              productDescription: "Lemon ice cream",
+                              productPrice: 8.99,
+                              productLikes: 125),
+                          RecommendedCard(
+                              imageAssetPath: "assets/images/icecream_stick.png",
+                              productName: "Shere Khan's Stick",
+                              productDescription: "Caramel ice cream",
+                              productPrice: 8.99,
+                              productLikes: 125),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

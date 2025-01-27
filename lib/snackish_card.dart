@@ -1,6 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+
 import 'package:jp_screens/order.dart';
 
 class SnackishCard extends StatelessWidget {
