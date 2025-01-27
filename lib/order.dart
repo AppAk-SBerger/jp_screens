@@ -217,6 +217,52 @@ class Order extends StatelessWidget {
               ),
             ),
             Positioned(
+              top: screenHeight * 0.28,
+              left: screenWidth * 0.15,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                          "Angi's Yummy Burger"),
+                      Text(
+                          style: TextStyle(
+                            color: Color(0xFFFFFFFF),
+                          ),
+                          "Delish vegan burger\nthat tastes like heaven"),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                              height: 13,
+                              width: 13,
+                              colorFilter: ColorFilter.mode(
+                                Color(0xFFFFFFFF),
+                                BlendMode.srcIn,
+                              ),
+                              'assets/icons/A.svg'),
+                          Text(
+                              style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                              ),
+                              '13.99')
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+            // Add to order button
+            Positioned(
+              top: screenHeight * 0.45,
+              left: screenWidth * 0.1,
               child: Container(
                 width: 96,
                 height: 44,
@@ -230,7 +276,7 @@ class Order extends StatelessWidget {
                     stops: [0.0, 1.0],
                   ),
                   boxShadow: [
-                    //drop shadow
+                    //inner shadow
                     BoxShadow(
                         color: const Color(0xFF9375B6),
                         offset: Offset(0, -3),
@@ -245,7 +291,7 @@ class Order extends StatelessWidget {
                       spreadRadius: 0,
                       blurStyle: BlurStyle.solid,
                     ),
-                    // inner shadow
+                    // drop shadow
                     BoxShadow(
                       color: const Color(0x80EA71C5),
                       offset: Offset(0, 30),
@@ -259,6 +305,16 @@ class Order extends StatelessWidget {
                 child: Center(
                     child: Text(
                         style: TextStyle(fontSize: 13, color: Color(0xFFFFFFFF)), 'Add to otder')),
+              ),
+            ),
+            // burger-image
+            Positioned(
+              top: screenHeight * 0.3,
+              left: screenWidth * 0.4,
+              child: Image(
+                height: 225,
+                width: 225,
+                image: AssetImage('assets/images/burger.png'),
               ),
             ),
           ],
